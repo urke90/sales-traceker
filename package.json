@@ -1,0 +1,16 @@
+{
+  "name": "uros",
+  "version": "1.0.0",
+  "description": "test project",
+  "main": "index.js",
+  "author": "Uros Bijelic",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^8.31.0",
+    "eslint-config-react-app": "^7.0.1"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
