@@ -1,14 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
-const TabItem = ({ isActive, tabId, title, onTabChange }) => {
-    const isActiveTabClass = isActive
-        ? 'text-blue-600 bg-gray-300'
-        : 'hover:text-gray-600 hover:bg-gray-200';
+import { AppContext } from '../../context/AppContext';
+
+const TabItem = ({ tabId, title }) => {
+    const { activeTab, handleChangeTab } = useContext(AppContext);
+
+    const isActive =
+        activeTab === tabId
+            ? 'text-blue-600 bg-gray-200'
+            : 'bg-gray-50 hover:text-gray-600 hover:bg-gray-100';
 
     return (
         <li
-            onClick={() => onTabChange(tabId)}
-            className={`mr-1 inline-block p-4 cursor-pointer rounded-t-lg bg-gray-100 ${isActiveTabClass}`}
+            onClick={() => handleChangeTab(tabId)}
+            className={`mr-1 inline-block p-4 cursor-pointer rounded-t-lg ${isActive}`}
             value="income"
             id="income"
         >
