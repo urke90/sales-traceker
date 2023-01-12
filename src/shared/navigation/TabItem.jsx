@@ -1,12 +1,9 @@
 import React from 'react';
 
 const TabItem = ({ isActive, tabId, title, onTabChange }) => {
-    console.log('isActive', isActive);
-    console.log('tabId', tabId);
-
     const isActiveTabClass = isActive
         ? 'text-blue-600 bg-gray-300'
-        : ' hover:text-gray-600 hover:bg-gray-200';
+        : 'hover:text-gray-600 hover:bg-gray-200';
 
     return (
         <li
