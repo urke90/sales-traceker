@@ -1,11 +1,13 @@
 import React from 'react';
 
+import Layout from './layout/Layout';
+
 import './App.css';
 
 const App = () => {
     return (
-        <div className="text-primary  text-3xl font-bold ">
-            <p className="text-blue-900 font-extrabold">Hello World!</p>
+        <div className="h-screen relative">
+            <Layout />
         </div>
     );
 };
