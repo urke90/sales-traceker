@@ -1,15 +1,16 @@
 import React from 'react';
+import { INCOME, INCOME_DETAILS } from '../../constants/tabs';
 
 import TabItem from './TabItem';
 
 const TABS_CONFIG = [
     {
         title: 'Income',
-        tabId: 'income'
+        tabId: INCOME
     },
     {
         title: 'Income Details',
-        tabId: 'income-details'
+        tabId: INCOME_DETAILS
     }
 ];
 
