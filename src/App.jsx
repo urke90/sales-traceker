@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useCallback } from 'react';
+import React, { useState, useCallback } from 'react';
 
 import { INCOME_DETAILS } from './constants/tabs';
 import { TABS_CONFIG } from './config/tabs.config';

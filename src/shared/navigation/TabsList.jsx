@@ -1,18 +1,4 @@
 import React from 'react';
-import { INCOME, INCOME_DETAILS } from '../../constants/tabs';
-
-import TabItem from './TabItem';
-
-const TABS_CONFIG = [
-    {
-        title: 'Income',
-        tabId: INCOME
-    },
-    {
-        title: 'Income Details',
-        tabId: INCOME_DETAILS
-    }
-];
 
 const TabsList = ({ children }) => {
     return (
@@ -23,9 +9,3 @@ const TabsList = ({ children }) => {
 };
 
 export default TabsList;
-
-// {TABS_CONFIG.length
-//     ? TABS_CONFIG.map(({ title, tabId }) => (
-//           <TabItem key={tabId} title={title} tabId={tabId} />
-//       ))
-//     : null}
