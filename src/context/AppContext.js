@@ -16,6 +16,7 @@ const AppProvider = ({ children }) => {
     const [activeTab, setActiveTab] = useState(INCOME_DETAILS);
 
     const handleChangeTab = (tab) => {
+        console.log('oplilal func', tab);
         setActiveTab(tab);
     };
 
