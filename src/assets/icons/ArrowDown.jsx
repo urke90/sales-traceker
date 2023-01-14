@@ -1,9 +1,9 @@
 import React from 'react';
 
-const ArrowDown = () => {
+const ArrowDown = ({ customStyles = '' }) => {
     return (
         <svg
-            className="w-4 h-4 ml-2"
+            className={`w-4 h-4 ${customStyles}`}
             aria-hidden="true"
             fill="none"
             stroke="currentColor"
