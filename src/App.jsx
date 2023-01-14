@@ -12,6 +12,8 @@ import IncomeDetails from './views/IncomeDetails';
 
 import './App.css';
 
+// * FOR REFEREBCE, DELETE LATER https://www.loom.com/share/990f857fc0b24a40af6a4e435d7ee4d6
+
 const App = () => {
     const [activeTab, setActiveTab] = useState(INCOME_DETAILS);
 

@@ -17,15 +17,15 @@ const Dropdown = () => {
     return (
         <div className="relative">
             <button
-                className="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center"
+                className="text-white border border-gray-500 bg-gray-500 hover:bg-gray-800 font-medium text-sm px-4 py-2.5 text-center inline-flex items-center"
                 type="button"
                 onClick={handleToggleDropdown}
             >
-                Dropdown
+                Monthly
                 <ArrowDown />
             </button>
             {isOpened && (
-                <div className="absolute z-10 divide-y w-auto bg-white divide-gray-100 rounded shadow ">
+                <div className="absolute z-10 divide-y w-auto bg-white divide-gray-100 rounded shadow">
                     <ul
                         className="py-1 text-sm text-gray-700"
                         aria-labelledby="dropdownDefaultButton"
