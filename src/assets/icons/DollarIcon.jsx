@@ -1,6 +1,10 @@
 import React from 'react';
 
-const DollarIcon = ({ styles }) => {
+import { mergeAndOverrideTWclasses } from '../../util/tw-merge';
+
+const DollarIcon = ({ customClasses = '' }) => {
+    const className = mergeAndOverrideTWclasses('w-6', 'h-6', customClasses);
+
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -8,7 +12,7 @@ const DollarIcon = ({ styles }) => {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className={`w-6 h-6 ${styles ? styles : ''}`}
+            className={className}
         >
             <path
                 strokeLinecap="round"

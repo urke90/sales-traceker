@@ -1,6 +1,10 @@
 import React from 'react';
 
-const CalculatorIcon = ({ styles }) => {
+import { mergeAndOverrideTWclasses } from '../../util/tw-merge';
+
+const CalculatorIcon = ({ customClasses }) => {
+    const className = mergeAndOverrideTWclasses('w-7', 'h-7', customClasses);
+
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -8,7 +12,7 @@ const CalculatorIcon = ({ styles }) => {
             viewBox="0 0 24 24"
             strokeWidth="1.5"
             stroke="currentColor"
-            className={styles}
+            className={className}
         >
             <path
                 strokeLinecap="round"

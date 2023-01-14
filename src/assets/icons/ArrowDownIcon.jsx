@@ -1,9 +1,13 @@
 import React from 'react';
 
-const ArrowDown = ({ customStyles = '' }) => {
+import { mergeAndOverrideTWclasses } from '../../util/tw-merge';
+
+const ArrowDown = ({ customClasses = '' }) => {
+    const className = mergeAndOverrideTWclasses('w-4', 'h-4', customClasses);
+
     return (
         <svg
-            className={`w-4 h-4 ${customStyles}`}
+            className={className}
             aria-hidden="true"
             fill="none"
             stroke="currentColor"

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { twMerge } from 'tailwind-merge';
+import { mergeAndOverrideTWclasses } from '../../util/tw-merge';
 
 // classes that will always be appled
 const defaultClasses = [
@@ -42,7 +42,11 @@ const Button = ({
 }) => {
     const outlinedClasses = outlined ? outlinedClassNames : '';
 
-    const className = twMerge(defaultClasses, outlinedClasses, customClasses);
+    const className = mergeAndOverrideTWclasses(
+        defaultClasses,
+        outlinedClasses,
+        customClasses
+    );
 
     return (
         <button

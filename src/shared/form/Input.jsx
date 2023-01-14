@@ -1,24 +1,31 @@
 import React from 'react';
 
+import { mergeAndOverrideTWclasses } from '../../util/tw-merge';
+
 import DollarIcon from '../../assets/icons/DollarIcon';
 
-const Input = ({ hasIcon, isInvalid, isTouched, styles = '' }) => {
-    const defaultInputClasses =
-        'block w-full p-2.5 text-sm text-gray-900 border bg-gray-50 outline-none';
-    const invalidInputClasses = `${
-        isInvalid && isTouched ? 'text-red-500 border-red-500' : ''
-    }`;
-    const hasIconClasses = `${hasIcon ? 'pl-10' : ''}`;
+const defaultInputClasses = [
+    'block',
+    'w-full',
+    'p-2.5',
+    'text-sm',
+    'text-gray-900',
+    'border',
+    'bg-gray-50',
+    'outline-none'
+];
 
-    // * did string concatenation to make sure that there is whitespace between classes
-    const fullClassName =
-        defaultInputClasses +
-        ' ' +
-        invalidInputClasses +
-        ' ' +
-        hasIconClasses +
-        ' ' +
-        styles;
+const Input = ({ hasIcon, isInvalid, isTouched, customClasses = '' }) => {
+    const invalidInputClasses =
+        isInvalid && isTouched ? 'text-red-500 border-red-500' : '';
+    const iconClasses = hasIcon ? 'pl-10' : '';
+
+    const className = mergeAndOverrideTWclasses(
+        defaultInputClasses,
+        invalidInputClasses,
+        iconClasses,
+        customClasses
+    );
 
     return (
         <>
@@ -35,7 +42,7 @@ const Input = ({ hasIcon, isInvalid, isTouched, styles = '' }) => {
                 <input
                     type="search"
                     id="search"
-                    className={fullClassName}
+                    className={className}
                     placeholder="e.g. 12 000"
                     required
                 />
