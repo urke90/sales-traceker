@@ -2,19 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-.app {
-    border: 1px solid red;
-    height: 100vh;
-    position: relative;
+.btn {
+    @apply text-white border border-blue-600 bg-blue-600 hover:bg-blue-800 font-medium text-sm px-3 py-1.5 sx:px-4 sx:py-2.5 inline-flex justify-center w-full rounded;
 }
 
-.app__wrapper {
-    border: 1px solid green;
-    /* position: absolute; */
-    /* top: 50%; */
-    /* left: 50%; */
-    /* -webkit-transform: translate(-50%, -50%); */
-    /* transform: translate(-50%, -50%); */
-    /* padding: 20px; */
-    /* max-width: 90%; */
+.btn--outlined {
+    @apply text-blue-600 bg-white hover:bg-blue-600 hover:text-white;
 }
