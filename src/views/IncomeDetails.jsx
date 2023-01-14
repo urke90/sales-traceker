@@ -10,10 +10,7 @@ import Button from '../shared/form/Button';
 import ArrowRightIcon from '../assets/icons/ArrowRightIcon';
 
 const IncomeDetails = () => {
-    const { incomeType, handleIncomeTypeChange, incomeFrequency } =
-        useIncomeContext();
-
-    console.log('incomeType in IncomeDetails.jsx', incomeType);
+    const { incomeType, handleIncomeTypeChange } = useIncomeContext();
 
     return (
         <div className="border-2 md:max-w-[60%]">
