@@ -1,6 +1,10 @@
 import React from 'react';
 
-const ArrowRightIcon = ({ customStyles = '' }) => {
+import { mergeAndOverrideTWclasses } from '../../util/tw-merge';
+
+const ArrowRightIcon = ({ customClasses = '' }) => {
+    const className = mergeAndOverrideTWclasses('w-5', ' h-5', customClasses);
+
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -8,7 +12,7 @@ const ArrowRightIcon = ({ customStyles = '' }) => {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className={`w-5 h-5 ${customStyles}`}
+            className={className}
         >
             <path
                 strokeLinecap="round"

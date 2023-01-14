@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { FREQUENCIES } from '../../config/frequency.config';
 
-import ArrowDown from '../../assets/icons/ArrowDown';
+import ArrowDownIcon from '../../assets/icons/ArrowDownIcon';
 import DropdownItem from './DropdownItem';
 import Button from './Button';
 
@@ -24,7 +24,7 @@ const Dropdown = () => {
             >
                 <div className="inline-flex items-center">
                     Monthly
-                    <ArrowDown customStyles="ml-2" />
+                    <ArrowDownIcon customClasses="ml-2" />
                 </div>
             </Button>
             {isOpened && (

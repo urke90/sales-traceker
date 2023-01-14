@@ -30,7 +30,7 @@ const IncomeDetails = () => {
             </div>
             <Button type="submit" customClasses="rounded">
                 <div className="inline-flex">
-                    Calculate <ArrowRightIcon customStyles="ml-2" />
+                    Calculate <ArrowRightIcon customClasses="ml-2" />
                 </div>
             </Button>
         </div>
