@@ -15,7 +15,14 @@ const defaultInputClasses = [
     'outline-none'
 ];
 
-const Input = ({ hasIcon, isInvalid, isTouched, customClasses = '' }) => {
+const Input = ({
+    hasIcon,
+    isInvalid,
+    isTouched,
+    customClasses = '',
+    onBlur,
+    onChange
+}) => {
     const invalidInputClasses =
         isInvalid && isTouched ? 'text-red-500 border-red-500' : '';
     const iconClasses = hasIcon ? 'pl-10' : '';
@@ -33,7 +40,7 @@ const Input = ({ hasIcon, isInvalid, isTouched, customClasses = '' }) => {
                 {hasIcon && (
                     <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                         <DollarIcon
-                            styles={`${
+                            customClasses={`${
                                 isInvalid && isTouched ? 'text-red-500' : ''
                             }`}
                         />
@@ -45,6 +52,8 @@ const Input = ({ hasIcon, isInvalid, isTouched, customClasses = '' }) => {
                     className={className}
                     placeholder="e.g. 12 000"
                     required
+                    onBlur={onBlur}
+                    onChange={onChange}
                 />
             </div>
             {isInvalid && isTouched && (

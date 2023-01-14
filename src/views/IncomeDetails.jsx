@@ -10,14 +10,28 @@ import Button from '../shared/form/Button';
 import ArrowRightIcon from '../assets/icons/ArrowRightIcon';
 
 const IncomeDetails = () => {
-    const { incomeType, handleIncomeTypeChange } = useIncomeContext();
+    const {
+        incomeType,
+        handleIncomeTypeChange,
+        handleChangeInputValue,
+        handleOnBlurInput,
+        inputState
+    } = useIncomeContext();
+
+    useEffect(() => {
+        console.log(inputState);
+    }, [inputState]);
 
     return (
         <div className="border-2 md:max-w-[60%]">
             <p className="mb-2">What is your total income?</p>
             <div className="mb-3 flex flex-wrap ">
                 <div className="w-full sx:w-[70%]">
-                    <Input hasIcon />
+                    <Input
+                        hasIcon
+                        onBlur={handleOnBlurInput}
+                        onChange={handleChangeInputValue}
+                    />
                 </div>
                 <div className="w-full sx:w-[30%]">
                     <Dropdown />
