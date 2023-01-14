@@ -9,6 +9,7 @@ import TabsList from './shared/navigation/TabsList';
 import TabItem from './shared/navigation/TabItem';
 import Income from './views/Income';
 import IncomeDetails from './views/IncomeDetails';
+import IncomeProvider from './context/income-context';
 
 import './App.css';
 
@@ -40,11 +41,13 @@ const App = () => {
                 <TabsList>{tabItems}</TabsList>
                 <div className="border-2 p-5">
                     <Header />
-                    {activeTab === INCOME_DETAILS ? (
-                        <IncomeDetails />
-                    ) : (
-                        <Income />
-                    )}
+                    <IncomeProvider>
+                        {activeTab === INCOME_DETAILS ? (
+                            <IncomeDetails />
+                        ) : (
+                            <Income />
+                        )}
+                    </IncomeProvider>
                 </div>
             </Layout>
         </div>
