@@ -35,7 +35,6 @@ export const incomeInitState = {
 };
 
 export const incomeReducer = (state, action) => {
-    console.log('reducer opalio');
     const { inputValue, incomeFrequency, taxFraction } = action.payload;
     const { gross, tax, net } = { ...state[incomeFrequency] };
 
