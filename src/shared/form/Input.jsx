@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { mergeAndOverrideTWclasses } from '../../util/tw-merge';
+import { formatNumberToCurrency } from '../../util/income-data';
 
 import DollarIcon from '../../assets/icons/DollarIcon';
 

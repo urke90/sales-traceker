@@ -13,3 +13,11 @@ export const calculateGrossIncome = (netIncome, taxFraction) => {
 
     return { gross, tax };
 };
+
+// Create our number formatter.
+export const formatNumberToCurrency = (value) => {
+    return value.toLocaleString('en-US', {
+        style: 'currency',
+        currency: 'USD'
+    });
+};
