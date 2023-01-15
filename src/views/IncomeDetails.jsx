@@ -22,7 +22,7 @@ const IncomeDetails = () => {
     } = useIncomeContext();
 
     return (
-        <form onSubmit={handleSubmitIncome} className=" md:max-w-[60%]">
+        <form onSubmit={handleSubmitIncome}>
             <p className="mb-2">What is your total income?</p>
             <div className="mb-3 flex flex-wrap ">
                 <div className="w-full sx:w-[70%]">
