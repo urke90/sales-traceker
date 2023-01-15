@@ -49,8 +49,7 @@ const IncomeProvider = ({ children }) => {
         dispatchInput({ type: BLUR_INPUT });
     }, []);
 
-    const handleSubmitIncome = (evt) => {
-        evt.preventDefault();
+    const handleAddIncome = () => {
         const type = incomeType === GROSS ? GROSS : NET;
 
         dispatchIncomes({
@@ -66,7 +65,7 @@ const IncomeProvider = ({ children }) => {
         handleIncomeFrequencyChange,
         handleChangeInputValue,
         handleOnBlurInput,
-        handleSubmitIncome,
+        handleAddIncome,
         inputIsTouched,
         inputIsValid,
         inputValue,

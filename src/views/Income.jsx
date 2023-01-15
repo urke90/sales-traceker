@@ -18,7 +18,6 @@ const Income = () => {
                 />
                 <IncomeList incomes={incomes} />
             </div>
-
             <IncomeBanner />
         </>
     );
