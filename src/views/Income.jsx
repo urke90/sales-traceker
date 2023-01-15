@@ -3,20 +3,19 @@ import React from 'react';
 import { useIncomeContext } from '../hooks/use-income-context';
 
 import IncomeHeader from '../components/income/IncomeHeader';
+import IncomeList from '../components/income/IncomeList';
 
 const Income = () => {
     const { incomeType, handleIncomeTypeChange, incomeFrequency, incomes } =
         useIncomeContext();
-    console.log('incomes IN INCOME.jsx', incomes);
-    console.log('incomeFrequency IN INCOME.jsx', incomeFrequency);
 
     return (
-        <div className="bg-blue-200 p-3">
+        <div className="bg-gray-200">
             <IncomeHeader
                 incomeFrequency={incomeFrequency}
                 netIncome={incomes[incomeFrequency].net}
             />
-            <main>MAIN PART WITH INCOMES</main>
+            <IncomeList incomes={incomes} />
             <footer>SOME BANNER HERE</footer>
         </div>
     );

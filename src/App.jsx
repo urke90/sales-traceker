@@ -37,8 +37,8 @@ const App = () => {
             : null;
 
     return (
-        <div className="h-screen relative">
-            <Layout>
+        <div className="relative flex pt-[50px] sx:h-screen sx:pt-0 justify-center items-center sx:m-auto">
+            <Layout activeTab={activeTab}>
                 <TabsList>{tabItems}</TabsList>
                 <div className="border-2 p-5">
                     <Header />
