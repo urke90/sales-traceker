@@ -36,5 +36,6 @@ export const INCOME_CONTEXT = {
     inputIsTouched: false,
     inputIsValid: true, // set this to true so that we don't get invalid input before entering income
     inputValue: 0,
-    formIsValid: false
+    formIsValid: false,
+    incomes: {}
 };

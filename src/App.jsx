@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from 'react';
 
-import { INCOME_DETAILS } from './constants/tabs';
+import { INCOME_DETAILS, INCOME } from './constants/tabs';
 import { TABS_CONFIG } from './config/tabs.config';
 
 import Layout from './layout/Layout';
@@ -16,7 +16,8 @@ import './App.css';
 // * FOR REFEREBCE, DELETE LATER https://www.loom.com/share/990f857fc0b24a40af6a4e435d7ee4d6
 
 const App = () => {
-    const [activeTab, setActiveTab] = useState(INCOME_DETAILS);
+    // revert back to INCOME_DETAILS after finish with Income component
+    const [activeTab, setActiveTab] = useState(INCOME);
 
     const handleChangeTab = useCallback((tab) => {
         setActiveTab(tab);
