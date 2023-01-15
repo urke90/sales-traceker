@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import { GROSS, NET } from '../constants/income-type';
 
@@ -12,32 +12,41 @@ import ArrowRightIcon from '../assets/icons/ArrowRightIcon';
 const IncomeDetails = () => {
     const {
         incomeType,
+        incomeFrequency,
+        inputIsTouched,
+        inputIsValid,
+        inputValue,
+        formIsValid,
         handleIncomeTypeChange,
         handleChangeInputValue,
-        handleOnBlurInput,
-        inputState
+        handleOnBlurInput
     } = useIncomeContext();
 
-    useEffect(() => {
-        console.log(inputState);
-    }, [inputState]);
+    const handleIncomeSubmit = (evt) => {
+        evt.preventDefault();
+        console.log('form submitted');
+    };
 
     return (
-        <div className="border-2 md:max-w-[60%]">
+        <form onSubmit={handleIncomeSubmit} className=" md:max-w-[60%]">
             <p className="mb-2">What is your total income?</p>
             <div className="mb-3 flex flex-wrap ">
                 <div className="w-full sx:w-[70%]">
                     <Input
+                        type="number"
                         hasIcon
                         onBlur={handleOnBlurInput}
                         onChange={handleChangeInputValue}
+                        value={inputValue}
+                        isValid={inputIsValid}
+                        isTouched={inputIsTouched}
                     />
                 </div>
                 <div className="w-full sx:w-[30%]">
                     <Dropdown />
                 </div>
             </div>
-            <p className="mb-2">Please choose income type</p>
+            <p className="mb-2">Please choose income type.</p>
             <div className="mb-3 flex gap-[10px]">
                 <Button
                     type="button"
@@ -54,12 +63,16 @@ const IncomeDetails = () => {
                     Net Income
                 </Button>
             </div>
-            <Button type="submit" customClasses="rounded">
+            <Button
+                type="submit"
+                customClasses="rounded"
+                disabled={!formIsValid}
+            >
                 <div className="inline-flex">
                     Calculate <ArrowRightIcon customClasses="ml-2" />
                 </div>
             </Button>
-        </div>
+        </form>
     );
 };
 

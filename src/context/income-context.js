@@ -45,10 +45,7 @@ const inputInitState = {
     isTouched: false,
     isValid: true
 };
-/**
- *
- * TODO FIGURE OUT HOW TO VALIDATE IF INPUT VALUE IS NUMBER
- */
+
 const inputReducer = (state, action) => {
     switch (action.type) {
         case BLUR_INPUT: {
@@ -56,13 +53,13 @@ const inputReducer = (state, action) => {
         }
         case CHANGE_VALUE: {
             const { value } = action.payload;
-            console.log('value', value);
+            let floatValue = parseFloat(value);
 
-            const isValid = Number(value) !== NaN;
+            if (value.trim() === '') floatValue = 0;
 
-            console.log('isValid in reducer', isValid);
+            const isValid = typeof floatValue === 'number' && floatValue !== 0;
 
-            return { ...state };
+            return { ...state, isValid, value: floatValue };
         }
 
         default:
@@ -76,12 +73,23 @@ const IncomeProvider = ({ children }) => {
     const [incomeFrequency, setIncomeFrequency] = useState(WEEKLY);
     const [inputState, dispatch] = useReducer(inputReducer, inputInitState);
 
-    const handleIncomeTypeChange = useCallback((value) => {
-        setIncomeType(value);
+    const {
+        isTouched: inputIsTouched,
+        isValid: inputIsValid,
+        value: inputValue
+    } = inputState;
+
+    const formIsValid =
+        inputIsValid && !!inputValue && !!incomeFrequency && !!incomeType;
+
+    console.log('inputState U CONTEXTU', inputState);
+
+    const handleIncomeTypeChange = useCallback((val) => {
+        setIncomeType(val);
     }, []);
 
     const handleIncomeFrequencyChange = useCallback((value) => {
-        setIncomeFrequency(value);
+        setIncomeFrequency(val);
     }, []);
 
     const handleChangeInputValue = useCallback((evt) => {
@@ -93,18 +101,21 @@ const IncomeProvider = ({ children }) => {
         dispatch({ type: BLUR_INPUT });
     }, []);
 
-    const value = {
+    const ctxValue = {
         incomeType,
         handleIncomeTypeChange,
         incomeFrequency,
         handleIncomeFrequencyChange,
-        inputState,
         handleChangeInputValue,
-        handleOnBlurInput
+        handleOnBlurInput,
+        inputIsTouched,
+        inputIsValid,
+        inputValue,
+        formIsValid
     };
 
     return (
-        <IncomeContext.Provider value={value}>
+        <IncomeContext.Provider value={ctxValue}>
             {children}
         </IncomeContext.Provider>
     );
