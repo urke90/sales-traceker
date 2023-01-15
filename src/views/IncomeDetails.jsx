@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { GROSS, NET } from '../constants/income-type';
-
 import { useIncomeContext } from '../hooks/use-income-context';
 
 import Dropdown from '../shared/form/Dropdown';
@@ -12,23 +11,18 @@ import ArrowRightIcon from '../assets/icons/ArrowRightIcon';
 const IncomeDetails = () => {
     const {
         incomeType,
-        incomeFrequency,
         inputIsTouched,
         inputIsValid,
         inputValue,
         formIsValid,
         handleIncomeTypeChange,
         handleChangeInputValue,
-        handleOnBlurInput
+        handleOnBlurInput,
+        handleSubmitIncome
     } = useIncomeContext();
 
-    const handleIncomeSubmit = (evt) => {
-        evt.preventDefault();
-        console.log('form submitted');
-    };
-
     return (
-        <form onSubmit={handleIncomeSubmit} className=" md:max-w-[60%]">
+        <form onSubmit={handleSubmitIncome} className=" md:max-w-[60%]">
             <p className="mb-2">What is your total income?</p>
             <div className="mb-3 flex flex-wrap ">
                 <div className="w-full sx:w-[70%]">
