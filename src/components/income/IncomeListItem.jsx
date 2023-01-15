@@ -1,9 +1,6 @@
 import React from 'react';
 
 const IncomeListItem = ({ frequency, incomeValues }) => {
-    // console.log('frequency', frequency);
-    console.log('incomeValues', incomeValues);
-
     const { gross, tax, net } = incomeValues;
 
     const title = frequency.toLowerCase();
