@@ -17,7 +17,7 @@ import './App.css';
 
 const App = () => {
     // revert back to INCOME_DETAILS after finish with Income component
-    const [activeTab, setActiveTab] = useState(INCOME);
+    const [activeTab, setActiveTab] = useState(INCOME_DETAILS);
 
     const handleChangeTab = useCallback((tab) => {
         setActiveTab(tab);
@@ -44,7 +44,7 @@ const App = () => {
                     <Header activeTab={activeTab} />
                     <IncomeProvider>
                         {activeTab === INCOME_DETAILS ? (
-                            <IncomeDetails />
+                            <IncomeDetails onTabChange={handleChangeTab} />
                         ) : (
                             <Income />
                         )}

@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { INCOME } from '../constants/tabs';
 import { GROSS, NET } from '../constants/income-type';
 import { useIncomeContext } from '../hooks/use-income-context';
 
@@ -8,7 +9,7 @@ import Input from '../shared/form/Input';
 import Button from '../shared/form/Button';
 import ArrowRightIcon from '../assets/icons/ArrowRightIcon';
 
-const IncomeDetails = () => {
+const IncomeDetails = ({ onTabChange }) => {
     const {
         incomeType,
         inputIsTouched,
@@ -18,8 +19,14 @@ const IncomeDetails = () => {
         handleIncomeTypeChange,
         handleChangeInputValue,
         handleOnBlurInput,
-        handleSubmitIncome
+        handleAddIncome
     } = useIncomeContext();
+
+    const handleSubmitIncome = (evt) => {
+        evt.preventDefault();
+        handleAddIncome();
+        onTabChange(INCOME);
+    };
 
     return (
         <form onSubmit={handleSubmitIncome}>
