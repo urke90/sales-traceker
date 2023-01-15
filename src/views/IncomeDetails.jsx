@@ -1,16 +1,12 @@
 import React from 'react';
 
 import { GROSS, NET } from '../constants/income-type';
-
-import { IncomeContext } from '../context/income-context';
-
 import { useIncomeContext } from '../hooks/use-income-context';
 
 import Dropdown from '../shared/form/Dropdown';
 import Input from '../shared/form/Input';
 import Button from '../shared/form/Button';
 import ArrowRightIcon from '../assets/icons/ArrowRightIcon';
-import { useContext } from 'react';
 
 const IncomeDetails = () => {
     const {
@@ -24,8 +20,6 @@ const IncomeDetails = () => {
         handleOnBlurInput,
         handleSubmitIncome
     } = useIncomeContext();
-
-    const ctx = useContext(IncomeContext);
 
     return (
         <form onSubmit={handleSubmitIncome} className=" md:max-w-[60%]">
